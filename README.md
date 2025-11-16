@@ -42,7 +42,7 @@ Built for a the CS Girlies 2025 Hackathon.
 ---
 
 ## 📁 Project Structure
-
+```tree
 hackathon_csgirlies/
 │
 ├── backend/
@@ -55,7 +55,7 @@ hackathon_csgirlies/
     ├── index.html           # Game upload + play screen
     ├── style.css            # Main game UI theme
     └── assets/              # Images (door, backgrounds, etc)
-
+```
 
 ---
 

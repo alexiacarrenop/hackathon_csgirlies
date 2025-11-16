@@ -25,7 +25,6 @@ async function fetchPuzzles(topic="general") {
     }
 }
 
-
 // Game state - current challenge, time interval, and score
 let currentPuzzle = 0;
 let timeLeft = 300; // 5 minutes in seconds

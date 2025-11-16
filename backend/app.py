@@ -23,18 +23,33 @@ def generate_puzzles():
 
     # Prompt sent to the model.
     prompt = f"""
-    You must output ONLY valid JSON. NO explanations. No code fences.
+    You must output ONLY valid JSON. Do NOT add explanations, text, comments, or code fences.
     
     Create 3 educational escape room puzzles about "{topic}".
-    Return an array of objects with:
-    -type
-    -question
-    -options (array or null)
-    -answer
-    -hint
+    Each puzzle MUST use this exact field order:
+    1.type
+    2.question
+    3.options
+    4.answer
+    5.hint
+    Return ONLY a JSON array of 3 objects in exactly this type of format:
+    [
+        {{
+            type: "...",
+            question: "...",
+            options: [... or null],
+            answer: "...",
+            hint: "..."
+        }},
+        ...
+    ]
+
     Puzzles can have different types such as multiple choice questions, where there are options of answers to choose from or text questions
     Puzzles should be short and increase in difficulty from easy to hard.
     
+    Do NOT change the field order.
+    Do NOT add other fields.
+    Do NOT include any text outside the JSON.
     Output ONLY valid JSON.
     """
 
@@ -52,7 +67,7 @@ def generate_puzzles():
     print(ai_text);
 
     return jsonify({"topic": topic, "puzzles": puzzles})
-    #return ai_text
+
 
 
 if __name__ == "__main__":

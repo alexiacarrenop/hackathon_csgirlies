@@ -42,6 +42,7 @@ Built for a the CS Girlies 2025 Hackathon.
 ---
 
 ## 📁 Project Structure
+
 hackathon_csgirlies/
 │
 ├── backend/
@@ -98,4 +99,56 @@ git clone https://github.com/alexiacarrenop/hackathon_csgirlies.git
 cd hackathon_csgirlies
 ```
 
+### **2. Backend Setup**
+```bash
+cd backend 
+pip install flask python-dotenv openai 
+```
+Create a .env file in /backend: 
+```bash
+HF_TOKEN=your_huggingface_token_here 
+ ```
+Run server: 
+```bash
+python app.py 
+ ```
+Backend defaults to: 
+```bash
+http://127.0.0.1:5000/generate_puzzles?topic=biology 
+ ```
+### **3. Frontend Setup**
 
+Frontend is static, just open the HTML files: 
+```bash
+homepage.html → landing page 
+
+index.html → upload + game screen
+```
+For development, you can run a simple server: 
+```bash
+cd frontend 
+python -m http.server 8000 
+ ```
+Visit: 
+```bash
+http://localhost:8000/homepage.html 
+ ```
+ 
+
+## 🧪 API Example
+
+### **Request**
+```http
+GET /generate_puzzles?topic=astronomy
+[
+  {
+    "question": "...",
+    "answer": "...",
+    "hint": "..."
+  },
+  {
+    "question": "...",
+    "answer": "...",
+    "hint": "..."
+  }
+]

@@ -45,16 +45,21 @@ Built for a the CS Girlies 2025 Hackathon.
 ```tree
 hackathon_csgirlies/
 │
+├── assets/ # images 
+│
 ├── backend/
 │   ├── app.py               # Flask server + AI puzzle generation
 │   └── script.js            # Escape room game logic (JS version)
 │
 └── frontend/
-    ├── homepage.html        # Landing page
-    ├── Homepage.css         # Landing page styles
-    ├── index.html           # Game upload + play screen
-    ├── style.css            # Main game UI theme
-    └── assets/              # Images (door, backgrounds, etc)
+│   ├── homepage.html        # Landing page
+│   ├── Homepage.css         # Landing page styles
+│   ├── index.html           # Game upload + play screen
+│   └── style.css            # Main game UI theme
+│
+└── .gitignore
+└── README.md
+
 ```
 
 ---

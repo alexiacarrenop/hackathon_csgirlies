@@ -1,28 +1,30 @@
 /* ESCAPE ROOM - JAVASCRIPT GAME LOGIC */
 
-// Mock data for puzzles
-const puzzles = [
-    {
-        type: "multiple_choice",
-        question: "How many bones does an adult human skeleton have?",
-        options: ["206", "201", "210"],
-        answer: "206",
-        hint: "It's more than 200 but less than 210."
-    },
-    {
-        type: "text",
-        question: "What was the ancient trade route that connected the East with the West?",
-        answer: "Silk Road",
-        hint: "It's named after a luxurious fabric."
-    },
-    {
-        type: "multiple_choice",
-        question: "Which planet is known as the Red Planet?",
-        options: ["Mars", "Jupiter", "Saturn"],
-        answer: "Mars",
-        hint: "It's the fourth planet from the Sun."
+
+// Determine backend URL based on environment
+const backendBaseURL = (window.location.hostname === '127.0.0.1' || window.location.hostname ===  "localhost")
+    ? 'http://127.0.0.1:5000'
+    : "";
+
+
+// Function to fetch puzzles
+async function fetchPuzzles(topic="general") {
+    try {
+      // Send request to backend to get puzzles
+        const response = await fetch(`${backendBaseURL}/generate_puzzles?topic=${encodeURIComponent(topic)}`);
+        const data = await response.json();
+
+        // Replace mock puzzles with fetched puzzles and show first puzzle
+        puzzles = data.puzzles;
+        showPopup(0);
+
+    } catch (error) {
+        // Handle errors in fetching puzzles and alert user
+        console.error("Error fetching puzzles:", error);
+        alert("Failed to load puzzles. Please try again later.");
     }
-];
+}
+
 
 // Game state - current challenge, time interval, and score
 let currentPuzzle = 0;

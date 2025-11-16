@@ -201,5 +201,5 @@ popupInput.addEventListener('keypress', (event) => {
 // Start game when page loads
 window.onload = () => {
     startTimer();
-    showPopup(currentPuzzle);
+    fetchPuzzles();
 };

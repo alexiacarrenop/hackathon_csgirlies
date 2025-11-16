@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Room Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">Escape Room Hackathon</h1>
+  </header>
+
+  <div class="app-container">
+    <!-- Rest of your page structure -->
+  </div>
+</body>
+</html>
+
+    <!-- 🔹 Upload Section -->
+    <section id="upload-screen" class="screen">
+      <div class="row">
+        <div class="col-3">
+          <h1>Upload Study Material</h1>
+          <p>Upload PDF, Images, or Text</p>
+          <p>Submit your lecture notes, slides, or summaries here. These will generate puzzles for the escape room game.</p>
+          <form>
+            <input type="file" name="study-material" />
+            <button type="submit" id="start-btn" class="btn primary">Generate Escape Room</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔹 Game Section -->
+<section id="game-screen" class="screen hidden">
+  <div class="parallax p2" id="game">
+    <div class="game-header">
+      <h1>Escape Room Hackathon</h1>
+      <div class="timer">Time Left: <span id="time">10:00</span></div>
+    </div>
+    <h2>Solve puzzles made from your study material!</h2>
+  </div>
+
+  <!-- Your game layout/puzzle area goes here -->
+</section>
+
+      <!-- Interactive Game Layout -->
+      <main class="game-layout">
+        <!-- Room Area with Door -->
+        <section class="room-area">
+          <img
+            src="assets/door.png"
+            alt="Locked Door"
+            class="door-image"
+          />
+          <p class="door-message">The door is locked. Solve the puzzles below to escape!</p>
+        </section>
+
+       <!-- Puzzle Area -->
+<section class="puzzle-area">
+
+  <!-- Multiple-choice Puzzle (shown first) -->
+  <div class="puzzle" id="puzzle-mc">
+    <h3 class="puzzle-title">Multiple Choice</h3>
+    <p class="puzzle-text">Which file type is used for web pages?</p>
+    <ul class="choices">
+      <li><label><input type="radio" name="mc"> .pptx</label></li>
+      <li><label><input type="radio" name="mc"> .html</label></li>
+      <li><label><input type="radio" name="mc"> .xlsx</label></li>
+    </ul>
+  </div>
+
+  <!-- Drag-and-Drop Puzzle (hidden initially) -->
+  <div class="puzzle hidden" id="puzzle-drag">
+    <h3 class="puzzle-title">Match the Terms</h3>
+    <p class="puzzle-text">Drag the term to its correct description:</p>
+
+    <div class="drag-wrap">
+      <div class="drag-item" draggable="true">HTML</div>
+      <div class="drag-item" draggable="true">CSS</div>
+      <div class="drop-zone" data-accept="HTML">Structure of Webpages</div>
+      <div class="drop-zone" data-accept="CSS">Styles Webpages</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="hint-button" class="btn">Hint</button>
+    <button id="submit-button" class="btn primary">Submit</button>
+  </div>
+
+</section>
+
+    <!-- 🔹 Info Boxes -->
+    <section id="info-section">
+      <div class="row">
+        <div class="col-3">
+          <h1>How It Works</h1>
+          <p>Each upload creates riddles, quizzes, and locks. keep Working hard to escape by solving them!</p>
+        </div>
+        <div class="col-3">
+          <h1>Leaderboard</h1>
+          <p>Track your progress against other student teams. The fastest escape wins prizes!</p>
+        </div>
+        <div class="col-3">
+          <h1>Hints</h1>
+          <p>Use hints wisely — they cost points but can help you unlock tricky puzzles.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
